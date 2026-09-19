@@ -1,0 +1,12 @@
+SPDX-License-Identifier: LicenseRef-EximAgent-Proprietary
+
+All Rights Reserved.
+
+Copyright (c) 2026 eximagent.ai.
+
+This package is a thin client for the eximagent.ai backend. The package
+itself is provided for convenience to coding agents and developers who
+want to integrate with the eximagent service surface. Source is not
+public. Redistribution, modification, sublicensing, and commercial use
+of this package or any derivative work are not permitted without a
+written agreement with eximagent.ai.
