@@ -66,6 +66,35 @@ Claude desktop Customize -> Connectors -> Add -> Add custom connector -> https:/
 
 Sign in with Google when your host opens the consent page; no key to paste, and access is revocable at any time. Keep your agent's sandbox ON — nothing here needs it disabled. Full connector documentation: <https://eximagent.ai/docs/integrations/mcp>
 
+## Customs data and shipment data MCP server
+
+EximAgent runs a hosted MCP server for customs and shipment data. Add it to
+Claude, Claude Code, ChatGPT, Cursor or Codex and ask trade questions in plain
+language: who imports a product into a market, what a company ships and with
+whom, which HS code fits a product, what duty applies on a corridor, and
+whether a name is on the OFAC SDN list.
+
+| | |
+|---|---|
+| Server URL | `https://mcp.eximagent.ai/mcp` |
+| Transport | Streamable HTTP (not stdio) |
+| Auth | OAuth 2.1 (dynamic client registration, PKCE), Google sign-in. No API key to paste. |
+| Data | Per-shipment customs and bill-of-lading records, importer and exporter discovery data, WTO and national tariff schedules, the OFAC SDN list |
+| Trust signals | Results carry their source and a confidence label (verified, extracted, heuristic, inferred); shipment answers include a coverage envelope |
+| Safety | Tools are annotated read-only or destructive; trade lookups are read-only |
+
+Add it:
+
+```bash
+claude mcp add --transport http eximagent https://mcp.eximagent.ai/mcp --scope user
+codex mcp add eximagent --url https://mcp.eximagent.ai/mcp && codex mcp login eximagent
+```
+
+In Claude desktop: Customize → Connectors → Add → Add custom connector → paste the URL.
+
+An EximAgent account is required; it is free to start.
+Overview: <https://eximagent.ai/connectors> · Docs: <https://eximagent.ai/docs/integrations/mcp>
+
 ## Links
 
 - <https://eximagent.ai>
