@@ -81,7 +81,6 @@ whether a name is on the OFAC SDN list.
 | Auth | OAuth 2.1 (dynamic client registration, PKCE), Google sign-in. No API key to paste. |
 | Data | Per-shipment customs and bill-of-lading records, importer and exporter discovery data, WTO and national tariff schedules, the OFAC SDN list |
 | Trust signals | Results carry their source and a confidence label (verified, extracted, heuristic, inferred); shipment answers include a coverage envelope |
-| Safety | Tools are annotated read-only or destructive; trade lookups are read-only |
 
 Add it:
 
